@@ -1,0 +1,45 @@
+// header
+
+.header{
+    border: 1px solid;
+    height: 14vh;
+}
+
+.list-header{
+    list-style: none;
+    margin-bottom: 0 !important;
+}
+
+.header a{
+    text-decoration: none;
+    color: black;
+    font-size: 12pt;
+}
+
+.list-header li{
+    margin-right: 16px !important;
+}
+
+// content
+
+.content{
+    min-height: 76vh;
+}
+
+// footer
+
+.footer{
+    border: 1px solid;
+    height: 10vh;
+}
+
+//  padding
+
+.padding-0{
+    padding: 0 !important;
+}
+
+.paddingLR-0{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
