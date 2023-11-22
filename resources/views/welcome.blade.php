@@ -157,5 +157,6 @@
         <img src="/img/bg.jpg" class="w-100" alt="">
     </div>
 
+
 @endsection
 

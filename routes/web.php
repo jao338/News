@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [NewController::class, 'index']);
 
+Route::get('news/create', [NewController::class, 'create']);
+Route::post('news/', [NewController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
