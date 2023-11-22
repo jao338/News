@@ -66,13 +66,13 @@
         </nav>
     </header>
 
-    <section class="container-fluid content">
+    <section class="container-fluid content pT-32 pB-32">
       <div class="container">
         @yield('content')
       </div>
     </section>
 
-    <footer class="container-fluid paddingLR-0">
+    <footer class="container-fluid pLR-0">
       <div class="footer d-flex justify-content-center align-items-center">
           <h4 style="color: white;">Choquei news</h4>     
       </div>
