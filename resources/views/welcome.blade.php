@@ -3,6 +3,10 @@
 @section('title', 'Choquei News - Dashboard')
 
 @section('content')
-    <h1>Aqui vai qualquer conteúdo</h1>
+    
+    <div class="d-flex align-items-end justify-content-center new">
+        <a href="/" class="title-new text-decoration-none">Senado adia para amanhã votação de PEC que limita ações do STF</a>
+    </div>
+
 @endsection
 

@@ -1,7 +1,7 @@
 // header
 
 .header{
-    border: 1px solid;
+    background-color: #C4170C;
     height: 14vh;
 }
 
@@ -12,8 +12,16 @@
 
 .header a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 12pt;
+}
+
+.btn-search{
+    width: 40px;
+    height: 40px;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+
 }
 
 .list-header li{
@@ -26,10 +34,27 @@
     min-height: 76vh;
 }
 
+.new{
+    height: 400px;
+    border: 1px solid;
+    background-image: url('/img/sei_nao.png');
+    background-size: auto;
+    background-position: center;
+    border-radius: 16px;
+}
+
+.title-new{
+    color: #C4170C;
+    color: white;
+    font-size: 28pt;
+    font-weight: bold;
+    
+}
+
 // footer
 
 .footer{
-    border: 1px solid;
+    background-color: black;
     height: 10vh;
 }
 
@@ -42,4 +67,10 @@
 .paddingLR-0{
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+//  Margin
+
+.mR-16{
+    margin-right: 16px !important;
 }
