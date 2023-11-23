@@ -4,6 +4,10 @@
 
 @section('content')
     
+    @if (session('msg'))
+        <h3>{{ session('msg') }}</h3>
+    @endif
+
     <div class="d-flex flex-column align-items-center justify-content-end new mB-16 pB-64">
         <a href="/" class="title-new text-decoration-none">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
         <a href="/" class="subtitle-new text-decoration-none">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>

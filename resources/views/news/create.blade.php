@@ -4,7 +4,7 @@
 
 @section('content')
     
-    <form action="/news" method="POST" class="form-create-new">
+    <form action="/news" method="POST" class="form-create-new" enctype="multipart/form-data">
     
         @csrf
         <h1>Nova notícia</h1>
@@ -15,25 +15,13 @@
         </div>
 
         <div class="form-group">
-            <div class="form-group">
-            <label for="subtitle1">Subtitulo 1:</label>
-            <input type="text" class="form-control" name="subtitle1" id="subtitle1">
-        </div>
-        
-        <div class="form-group">
-            <label for="subtitle2">Subtitulo 2:</label>
-            <input type="text" class="form-control" name="subtitle2" id="subtitle2">
-        </div>
+            <label for="subtitles">Conteúdo:</label>
+            <textarea class="form-control" name="description" id="description"></textarea>
         </div>
 
         <div class="form-group">
-            <label for="topic1">Topico 1</label>
-            <input type="text" class="form-control" name="topic1" id="topic1">
-        </div>
-
-        <div class="form-group">
-            <label for="topic2">Topico 2</label>
-            <input type="text" class="form-control" name="topic2" id="topic2">
+            <label for="date">Data de noticia</label>
+            <input type="date" name="date" id="date" class="form-control">
         </div>
 
         <div class="d-flex justify-content-end">
