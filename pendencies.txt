@@ -1,0 +1,9 @@
+1 - Substituir a coluna 'description' por outras duas colunas, 'topics' e 'subtitles', sendo que cada uma delas deve ser do tipo array
+
+2 - Adicionar tamanho fixo aos títulos das noticias, bem como quebra de linha
+
+3 - Adicionar chave estrangeira 'user_id' à tabela de noticias
+
+4 - Testar e ajustar o responsivo
+
+5 - Criar a página de exibição de uma notícia e passar como parâmetro para a rota o 'id' da noticia

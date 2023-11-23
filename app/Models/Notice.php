@@ -15,6 +15,6 @@ class Notice extends Model
 
     protected $dates = ['date'];
 
-    // protected $casts = ['subtitles' => 'array', 'topics' => 'array'];
+    // protected $casts = ['subtitles' => 'json', 'topics' => 'json'];
 
 }

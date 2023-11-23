@@ -15,8 +15,8 @@
         </div>
 
         <div class="form-group">
-            <label for="subtitles">Conteúdo:</label>
-            <textarea class="form-control" name="description" id="description"></textarea>
+            <label for="description">Conteúdo:</label>
+            <input type="text" class="form-control" name="description" id="description">
         </div>
 
         <div class="form-group">

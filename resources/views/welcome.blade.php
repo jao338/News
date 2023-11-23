@@ -2,10 +2,10 @@
 
 @section('title', 'Choquei News - Dashboard')
 
-@section('content')
+{{-- @section('content')
     
     @if (session('msg'))
-        <h3>{{ session('msg') }}</h3>
+        <h3 class="mB-16">{{ session('msg') }}</h3>
     @endif
 
     <div class="d-flex flex-column align-items-center justify-content-end new mB-16 pB-64">
@@ -163,4 +163,43 @@
 
 
 @endsection
+ --}}
 
+@section('content')
+
+    @if (session('msg'))
+        <h3 class="mB-16">{{ session('msg') }}</h3>
+    @endif
+        
+        <div class="d-flex flex-column align-items-center justify-content-end new mB-16 pB-64">
+            <a href="/" class="title-new text-center text-decoration-none pL-32 pR-32 pB-8">{{ $lastNotice->title }}</a>
+            <a href="/" style="width: 60%" class="subtitle-new text-center text-decoration-none pL-32 pR-32 overflow-ellipsis">{{ $lastNotice->description }}</a>
+        </div>
+        
+        <div class="ad mB-32">
+            <img src="/img/bg.jpg" class="w-100" alt="">
+        </div>
+
+        @foreach ($allNotices as $notice)
+            <div class="row mB-16">
+                <div class="news col-md-10 d-flex justify-content-center">
+        
+                    <div class="new-grid d-flex align-items-center">
+                        <a href="/" class="w-50 mR-16">
+                            <img src="/img/bg.jpg" class="w-100" alt="">
+                        </a>
+                        <div class="row">
+                            <a href="/" class="title-new-grid text-decoration-none text-wrap">{{ $notice->title }}</a>
+                            <p>{{ $notice->description }}</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="ads col-md-2 d-flex justify-content-end">
+                    <a href="/" class="w-75">
+                        <img src="/img/bg.jpg" class="w-100" alt="">
+                    </a>
+                </div>
+            </div>
+        @endforeach
+@endsection

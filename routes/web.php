@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [NewController::class, 'index']);
 
-Route::get('news/create', [NewController::class, 'create']);
+Route::get('news/create', [NewController::class, 'create'])->middleware('auth');
 Route::post('/news', [NewController::class, 'store']);
+Route::get('/news/{id}', [NewController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

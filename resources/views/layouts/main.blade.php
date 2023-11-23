@@ -42,8 +42,14 @@
             <li>
               <a href="#">Mais vistos</a>
             </li>
+            
+            @auth
+            <li>
+              <a href="/news/create">Criar notícia</a>
+            </li>
+            @endauth
           </ul>
-
+            
           @auth
 
             <div class="d-flex align-item-center navbar-brand">

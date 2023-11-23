@@ -9,7 +9,12 @@ use PhpParser\Node\Expr\New_;
 class NewController extends Controller{
     
     public function index(){
-        return view('welcome');
+
+        $allNotices = Notice::latest('id'); //  Pega os registros ordenaos pelo último
+
+        $lastNotice = Notice::latest('id')->first();    //  Ordena pelo último e pega o primeiro registro
+
+        return view('welcome', ['allNotices' => $allNotices, 'lastNotice' => $lastNotice]);
     }
 
     public function create(){
@@ -20,8 +25,6 @@ class NewController extends Controller{
 
         $notice = new Notice();
 
-        // dd($request);
-
         $notice->title = $request->title;
         $notice->description = $request->description;
         $notice->date = $request->date;
@@ -29,6 +32,13 @@ class NewController extends Controller{
         $notice->save();
 
         return redirect('/')->with('msg', "Noticia criada com sucesso!");
-        
+    }
+
+    public function show($id){
+
+        $notice = Notice::findOrFail($id);
+
+        return view('news/show', ['notice' => $notice]);
+
     }
 }
