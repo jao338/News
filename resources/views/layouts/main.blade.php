@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/style.css">
+
 </head>
 <body>
-    
+
     <header class="header navbar navbar-expand-lg">
       <nav class="container">
           

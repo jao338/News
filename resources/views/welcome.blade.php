@@ -165,12 +165,11 @@
 @endsection
  --}}
 
+@section('content')
+ 
 @php
     $lastTopics = json_decode($lastNotice->topic, TRUE);
-    // $allTopics = json_decode($allNotices->topic, TRUE);
 @endphp
-
-@section('content')
 
     @if (session('msg'))
         <h3 class="mB-16">{{ session('msg') }}</h3>
@@ -182,20 +181,28 @@
         </div>
         
         <div class="ad mB-32">
-            <img src="/img/bg.jpg" class="w-100" alt="">
+            <img src="/img/ads/ad1.gif" class="w-100" alt="">
         </div>
 
         @foreach ($allNotices as $notice)
+
+            @php
+                $topics = json_decode($notice->topic, TRUE);
+            @endphp
+
             <div class="row mB-16">
                 <div class="news col-md-10 d-flex justify-content-center">
         
                     <div class="new-grid d-flex align-items-center">
-                        <a href="/" class="w-50 mR-16">
-                            <img src="/img/bg.jpg" class="w-100" alt="">
+                        <a href="/news/{{ $notice->id }}" class="mR-16">
+                            <div class="thumb-new">
+                                <img src="/img/news/{{ $notice->img }}" class="w-100" alt="{{ $notice->title }}">
+                            </div>
                         </a>
+
                         <div class="row">
                             <a href="/news/{{ $notice->id }}" class="title-new-grid text-decoration-none text-wrap">{{ $notice->title }}</a>
-                            {{-- <p>{{ $notice->topic }}</p> --}}
+                            <p style="width: 512px" class="overflow-ellipsis">{{ $topics[0] }}</p>
                         </div>
                     </div>
                 
@@ -205,6 +212,12 @@
                         <img src="/img/bg.jpg" class="w-100" alt="">
                     </a>
                 </div>
+                
             </div>
         @endforeach
+
+        <div class="ad d-flex w-100 mB-32">
+            <img src="/img/ads/ad2.jpg" class="w-50 mR-8" alt="">
+            <img src="/img/ads/ad3.jpeg" class="w-50 mR-8" alt="">
+        </div>
 @endsection
