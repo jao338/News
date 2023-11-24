@@ -42,9 +42,7 @@
 
 .new{
     height: 400px;
-    border: 1px solid;
-    background-image: url('/img/bg.jpg');
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     border-radius: 16px;
 }
@@ -174,6 +172,10 @@
 
 .mB-32{
     margin-bottom: 32px !important;
+}
+
+.mB-64{
+    margin-bottom: 64px !important;
 }
 
 .mT-16{

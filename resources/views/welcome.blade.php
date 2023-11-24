@@ -175,7 +175,7 @@
         <h3 class="mB-16">{{ session('msg') }}</h3>
     @endif
         
-        <div class="d-flex flex-column align-items-center justify-content-end new mB-16 pB-64">
+        <div class="d-flex flex-column align-items-center justify-content-end new mB-16 pB-64" style="background-image: url('/img/news/{{$lastNotice->img}}')">
             <a href="/news/{{ $lastNotice->id }}" class="title-new text-center text-decoration-none pL-32 pR-32 pB-8">{{ $lastNotice->title }}</a>
             <a href="/news/{{ $lastNotice->id }}" style="width: 60%" class="subtitle-new text-center text-decoration-none pL-32 pR-32 overflow-ellipsis">{{ $lastTopics[0] }}</a>
         </div>
@@ -186,13 +186,13 @@
 
         @foreach ($allNotices as $notice)
 
+        <div class="row mB-16">
+            
             @php
                 $topics = json_decode($notice->topic, TRUE);
             @endphp
-
-            <div class="row mB-16">
                 <div class="news col-md-10 d-flex justify-content-center">
-        
+            
                     <div class="new-grid d-flex align-items-center">
                         <a href="/news/{{ $notice->id }}" class="mR-16">
                             <div class="thumb-new">
@@ -211,13 +211,14 @@
                     <a href="/" class="w-75">
                         <img src="/img/bg.jpg" class="w-100" alt="">
                     </a>
-                </div>
+                </div>  
                 
-            </div>
+        </div>
         @endforeach
 
         <div class="ad d-flex w-100 mB-32">
             <img src="/img/ads/ad2.jpg" class="w-50 mR-8" alt="">
             <img src="/img/ads/ad3.jpeg" class="w-50 mR-8" alt="">
         </div>
+
 @endsection
