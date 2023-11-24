@@ -165,6 +165,11 @@
 @endsection
  --}}
 
+@php
+    $lastTopics = json_decode($lastNotice->topic, TRUE);
+    // $allTopics = json_decode($allNotices->topic, TRUE);
+@endphp
+
 @section('content')
 
     @if (session('msg'))
@@ -172,8 +177,8 @@
     @endif
         
         <div class="d-flex flex-column align-items-center justify-content-end new mB-16 pB-64">
-            <a href="/" class="title-new text-center text-decoration-none pL-32 pR-32 pB-8">{{ $lastNotice->title }}</a>
-            <a href="/" style="width: 60%" class="subtitle-new text-center text-decoration-none pL-32 pR-32 overflow-ellipsis">{{ $lastNotice->description }}</a>
+            <a href="/news/{{ $lastNotice->id }}" class="title-new text-center text-decoration-none pL-32 pR-32 pB-8">{{ $lastNotice->title }}</a>
+            <a href="/news/{{ $lastNotice->id }}" style="width: 60%" class="subtitle-new text-center text-decoration-none pL-32 pR-32 overflow-ellipsis">{{ $lastTopics[0] }}</a>
         </div>
         
         <div class="ad mB-32">
@@ -189,8 +194,8 @@
                             <img src="/img/bg.jpg" class="w-100" alt="">
                         </a>
                         <div class="row">
-                            <a href="/" class="title-new-grid text-decoration-none text-wrap">{{ $notice->title }}</a>
-                            <p>{{ $notice->description }}</p>
+                            <a href="/news/{{ $notice->id }}" class="title-new-grid text-decoration-none text-wrap">{{ $notice->title }}</a>
+                            {{-- <p>{{ $notice->topic }}</p> --}}
                         </div>
                     </div>
                 

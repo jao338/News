@@ -10,7 +10,7 @@ class NewController extends Controller{
     
     public function index(){
 
-        $allNotices = Notice::latest('id'); //  Pega os registros ordenaos pelo último
+        $allNotices = Notice::all(); //  Pega os registros ordenaos pelo último
 
         $lastNotice = Notice::latest('id')->first();    //  Ordena pelo último e pega o primeiro registro
 
@@ -26,8 +26,23 @@ class NewController extends Controller{
         $notice = new Notice();
 
         $notice->title = $request->title;
-        $notice->description = $request->description;
+        $notice->topic = json_encode($request->topics);
         $notice->date = $request->date;
+
+        //  Verifica se existe um input do tipo file e se ele é válido
+        if($request->hasFile('img') && $request->file('img')->isValid()){
+
+            $requestImage = $request->img;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/news'), $imageName);
+
+            $notice->img = $imageName;
+
+        }
 
         $notice->save();
 

@@ -1,4 +1,4 @@
-1 - Substituir a coluna 'description' por outras duas colunas, 'topics' e 'subtitles', sendo que cada uma delas deve ser do tipo array
+1 - Um array deve ser passado contendo os inputs de 'topics', os dados devem ser salvos como string na coluna de 'description' usando um separador previamente definido
 
 2 - Adicionar tamanho fixo aos títulos das noticias, bem como quebra de linha
 

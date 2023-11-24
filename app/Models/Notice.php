@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Notice extends Model
+class Notice extends Model  
 {
     use HasFactory;
 
@@ -15,6 +15,6 @@ class Notice extends Model
 
     protected $dates = ['date'];
 
-    // protected $casts = ['subtitles' => 'json', 'topics' => 'json'];
+    protected $casts = ['topics' => 'json'];
 
 }
