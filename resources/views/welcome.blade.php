@@ -167,18 +167,18 @@
 
 @section('content')
 
-    @if (session('msg'))
-        <h3 class="mB-16">{{ session('msg') }}</h3>
-    @endif
 
-      @if (count($allNotices) == 0)
+    @if (count($allNotices) == 0)
         <p>Nenhuma notícia foi encontrada, <a href="/news/create" class="text-decoration-none">criar notícia</a></p>
-      @else
+    @else
 
     @php
         $lastTopics = json_decode($lastNotice->topic, TRUE);
     @endphp
 
+        @if (session('msg'))
+            <h3 class="mB-16">{{ session('msg') }}</h3>
+        @endif
             <div class="d-flex flex-column align-items-center justify-content-end new mB-32 pB-64" style="background-image: url('/img/news/{{$lastNotice->img}}')">
                 <a href="/news/{{ $lastNotice->id }}" class="title-new text-center text-decoration-none pL-32 pR-32 pB-8">{{ $lastNotice->title }}</a>
                 <a href="/news/{{ $lastNotice->id }}" style="width: 60%" class="subtitle-new text-center text-decoration-none pL-32 pR-32 overflow-ellipsis">{{ $lastTopics[0] }}</a>
@@ -233,6 +233,32 @@
                 @foreach ($allNotices as $notice)
                 
                 @if (!in_array("Politica", json_decode($notice->themes, TRUE)))
+
+                @else
+                    <div class="col-md-3">
+                        <div class="card mR-32">
+                            <div class="p-0 card-header">
+                                <img src="/img/news/{{ $notice->img }}" alt="">
+                            </div>
+                            <div class="card-body">
+                                <a href="/news/{{ $notice->id }}" class="text-decoration-none">{{ $notice->title }}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                @endif
+
+                @endforeach
+
+            </div>
+
+            <h2 class="mT-32">Saúde</h2>
+
+            <div class="row cards">
+
+                @foreach ($allNotices as $notice)
+                
+                @if (!in_array("Saude", json_decode($notice->themes, TRUE)))
 
                 @else
                     <div class="col-md-3">

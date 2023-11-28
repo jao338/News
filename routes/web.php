@@ -18,7 +18,10 @@ Route::get('/', [NewController::class, 'index']);
 
 Route::get('news/create', [NewController::class, 'create'])->middleware('auth');
 Route::post('/news', [NewController::class, 'store']);
+Route::put('/news/{id}', [NewController::class, 'update']);
+Route::delete('/news/{id}', [NewController::class, 'destroy']);
 Route::get('/news/{id}', [NewController::class, 'show']);
+Route::get('/news/edit/{id}', [NewController::class, 'edit']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

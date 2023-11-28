@@ -170,10 +170,17 @@
     padding-left: 32px !important;
 }
 
+.pL-64{
+    padding-left: 64px !important;
+}
+
 .pR-32{
     padding-right: 32px !important;
 }
 
+.pR-64{
+    padding-right: 64px !important;
+}
 
 //  Margin
 
@@ -185,6 +192,10 @@
 .mLR-0{
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+
+.mR-8{
+    margin-right: 8px !important;
 }
 
 .mR-16{
@@ -209,6 +220,10 @@
 
 .mT-16{
     margin-top: 16px !important;
+}
+
+.mT-32{
+    margin-top: 32px !important;
 }
 
 .mL-8{
