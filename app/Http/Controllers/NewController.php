@@ -84,7 +84,7 @@ class NewController extends Controller{
 
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
-            $requestImage->move(public_path('img/news'), $imageName);
+            $requestImage->storeAs('posts', $imageName);   //  É feito o upload da imagem para o storage, que possui um link simbólico que aponta a para pasta 'public'
 
             $notice->img = $imageName;
 
@@ -110,7 +110,6 @@ class NewController extends Controller{
         }
 
         
-
         $notice->delete();
 
         return redirect('/')->with('msg', "Noticia exluida com sucesso");
