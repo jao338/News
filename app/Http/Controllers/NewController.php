@@ -84,7 +84,7 @@ class NewController extends Controller{
 
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
-            $requestImage->storeAs('posts', $imageName);   //  É feito o upload da imagem para o storage, que possui um link simbólico que aponta a para pasta 'public'
+            $requestImage->storeAs('public', $imageName);   //  É feito o upload da imagem para o storage, que possui um link simbólico que aponta a para pasta 'public'
 
             $notice->img = $imageName;
 

@@ -238,7 +238,7 @@
                     <div class="col-md-3">
                         <div class="card mR-32">
                             <div class="p-0 card-header">
-                                <img src="{{ Storage::path("{{$notice->img}}") }}" alt="">
+                                <img src="{{ asset("storage/{$notice->img}") }}" alt="">
                             </div>
                             <div class="card-body">
                                 <a href="/news/{{ $notice->id }}" class="text-decoration-none">{{ $notice->title }}</a>
