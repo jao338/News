@@ -7,3 +7,5 @@
 4 - Testar e ajustar o responsivo
 
 5 - Criar a página de exibição de uma notícia e passar como parâmetro para a rota o 'id' da noticia
+
+6 - Opção de editar e deletar a noticia

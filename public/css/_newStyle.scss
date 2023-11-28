@@ -1,7 +1,8 @@
 //  Style
 
-.row{
+.row>*{
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 // header
@@ -108,10 +109,24 @@
 
 .thumb-new{
     width: 256px; 
-    height: 128px; 
+    height: 196px; 
     overflow: hidden; 
     border-radius: 16px;
 }
+
+.themes input{
+    margin-left: 16px !important;
+}
+
+.card-body{
+    height: 132px;
+}
+
+.card-header{
+    height: 164px;
+    overflow: hidden;
+}
+
 
 // footer
 
@@ -162,8 +177,22 @@
 
 //  Margin
 
+
+.m-0{
+    margin: 0 !important;
+}
+
+.mLR-0{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .mR-16{
     margin-right: 16px !important;
+}
+
+.mR-32{
+    margin-right: 32px !important;
 }
 
 .mB-16{

@@ -41,7 +41,7 @@
             </li>
 
             <li>
-              <a href="#">Mais vistos</a>
+              <a href="#">Tecnologia</a>
             </li>
             
             @auth

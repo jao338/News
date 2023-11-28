@@ -10,11 +10,13 @@ class NewController extends Controller{
     
     public function index(){
 
-        $allNotices = Notice::all(); //  Pega os registros ordenaos pelo último
+        $lastNotices = Notice::orderBy('id', 'DESC')->paginate(4);; //  Pega os registros ordenaos pelo último
+
+        $allNotices = Notice::all();
 
         $lastNotice = Notice::latest('id')->first();    //  Ordena pelo último e pega o primeiro registro
 
-        return view('welcome', ['allNotices' => $allNotices, 'lastNotice' => $lastNotice]);
+        return view('welcome', ['allNotices' => $allNotices, 'lastNotices' => $lastNotices ,'lastNotice' => $lastNotice]);
     }
 
     public function create(){
@@ -27,6 +29,7 @@ class NewController extends Controller{
 
         $notice->title = $request->title;
         $notice->topic = json_encode($request->topics);
+        $notice->themes = json_encode($request->themes);
         $notice->date = $request->date;
 
         //  Verifica se existe um input do tipo file e se ele é válido
