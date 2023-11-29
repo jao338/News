@@ -21,13 +21,20 @@
             <div class="topic1">
                 <p>{{ $topics[0] }}</p>
             </div>
-            <p class="d-flex justify-content-between">
-                <span>Data de postagem: {{ date('d/m/y', strtotime($notice->date)) }}</span>
-                <span>
-                    <a href="/news/edit{{ $notice->id }}" class="btn btn-primary">Editar</a>
-                    <a href="/news/{{ $notice->id }}" class="btn btn-danger">Excluir</a>
-                </span>
-            </p>
+
+            <div class="d-flex flex-row justify-content-between">
+                <div >Data de postagem: {{ date('d/m/y', strtotime($notice->date)) }}</div>
+                <div class="d-flex">
+                    <a href="/news/edit/{{ $notice->id }}" class="btn btn-primary mR-8">Editar</a>
+                    
+                    <form action="/news/{{ $notice->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+
+                </div>
+            </div>
         </div>
 
         <div class="ad mB-32">
