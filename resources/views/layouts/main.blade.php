@@ -15,8 +15,9 @@
           
           <a href="/" class="navbar-brand"><img src="/img/logo.png" width="80" height="80" alt=""></a>  
           
-          <form action="/" method="GET" class="d-flex navbar-brand">
-            <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+          <form action="/news/search/" method="GET" class="d-flex navbar-brand">
+            @csrf
+            <input type="text" name="inputSearch" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
             <button type="submit" name="btn-search" class="btn-search rounded-circle btn btn-light">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -66,7 +67,7 @@
           @guest
           <div class="navbar-brand links-header">
             <a href="/login" class="btn btn-light mR-16" style="color:black">Login</a>
-            <a href="/register" class="btn btn-outline-light" style="color:white">Cadastro</a>
+            <a href="/register" class="btn btn-outline-light">Cadastro</a>
           </div>
           @endguest
 

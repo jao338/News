@@ -110,10 +110,18 @@ class NewController extends Controller{
             return redirect()->back();  //  Caso não encontre o registro, redireciona de volta para a página anterior
         }
 
-        
         $notice->delete();
 
         return redirect('/')->with('msg', "Noticia exluida com sucesso");
+    }
 
+    public function search(Request $request){
+
+        $search = Notice::whereJsonContains("themes", $request->inputSearch)->
+                                        orWhere('title', 'LIKE', "%{$request->inputSearch}%")->paginate();
+
+        // $search = Notice::where('title', 'LIKE', "%{$request->inputSearch}%")->paginate();
+        
+        return view('welcome', ['search' => $search]);
     }
 }

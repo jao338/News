@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [NewController::class, 'index']);
 
 Route::get('news/create', [NewController::class, 'create'])->middleware('auth');
+Route::get('/news/search/', [NewController::class, 'search']);
 Route::post('/news', [NewController::class, 'store']);
 Route::put('/news/{id}', [NewController::class, 'update']);
 Route::delete('/news/{id}', [NewController::class, 'destroy']);
