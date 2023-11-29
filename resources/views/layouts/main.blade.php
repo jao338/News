@@ -30,19 +30,19 @@
           <ul class="navbar-brand d-flex align-items-center justify-content-center list-header">
 
             <li>
-              <a href="#">Política</a>
+              <a href="/news/search/?inputSearch=Politica">Política</a>
             </li>
             
             <li>
-              <a href="#">Economia</a>
+              <a href="/news/search/?inputSearch=Economia">Economia</a>
             </li>
 
             <li>
-              <a href="#">Esportes</a>
+              <a href="/news/search/?inputSearch=Esportes">Esportes</a>
             </li>
 
             <li>
-              <a href="#">Tecnologia</a>
+              <a href="/news/search/?inputSearch=Tecnologia">Tecnologia</a>
             </li>
             
             @auth

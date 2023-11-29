@@ -19,7 +19,7 @@
                 <img src="/img/news/{{$item->img}}" class="w-100" style="border-radius: 16px" alt="">
             </div>
             <div class="d-flex align-items-center col-md-9 pL-16">
-                <a href="/" class="text-decoration-none" style="font-size: 18pt; font-weight: bold; color: #C4170C">{{ $item->title }}</a>
+                <a href="/news/{{$item->id}}" class="text-decoration-none" style="font-size: 18pt; font-weight: bold; color: #C4170C">{{ $item->title }}</a>
             </div>
         </div>
         
