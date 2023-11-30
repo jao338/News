@@ -8,4 +8,4 @@
 
 5 - Criar a página de exibição de uma notícia e passar como parâmetro para a rota o 'id' da noticia
 
-6 - Opção de editar e deletar a noticia
+6 - Deletar as imagens da pasta 'public' quando uma noticia for deletada

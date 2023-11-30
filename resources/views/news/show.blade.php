@@ -6,6 +6,7 @@
 
     @php
         $topics = json_decode($notice->topic, TRUE);
+        $user = auth()->user();
     @endphp
 
     <div class="d-flex flex-column align-items-center w-100">
@@ -23,7 +24,10 @@
             </div>
 
             <div class="d-flex flex-row justify-content-between">
-                <div >Data de postagem: {{ date('d/m/y', strtotime($notice->date)) }}</div>
+                <div class="info-notice">
+                    <span>Data de postagem: {{ date('d/m/y', strtotime($notice->date)) }}</span>
+                    <span>- {{ $user->name }}</span>
+                </div>
                 <div class="d-flex">
                     <a href="/news/edit/{{ $notice->id }}" class="btn btn-primary mR-8">Editar</a>
                     

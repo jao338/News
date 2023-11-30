@@ -122,10 +122,8 @@ class NewController extends Controller{
 
         $search = Notice::whereJsonContains("themes", $request->inputSearch)->
                                         orWhere('title', 'LIKE', "%{$request->inputSearch}%")->paginate();
-
-        // $search = Notice::where('title', 'LIKE', "%{$request->inputSearch}%")->paginate();
         
-        return view('welcome', ['search' => $search]);
+        return view('welcome', ['search' => $search, 'input' => $request->inputSearch]);
     }
 
     public function dashboard(){

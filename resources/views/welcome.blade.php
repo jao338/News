@@ -8,18 +8,26 @@
         <h3 class="mB-16">{{ session('msg') }}</h3>
     @endif
 
-    @if (isset($search))
+    @if (isset($search) && count($search)=== 0)
 
-        <h2 class="mB-32">Buscando por: </h2>
+        <h2 class="mB-32">Buscando por: {{ $input }}</h2>
+        
+        <p>Nenhuma notícia foi encontrada, <a href="/" class="text-decoration-none">ver todas</a></p>
+
+    @elseif(isset($search) && count($search) > 0)
+
+        <h2 class="mB-32">Buscando por: {{ $input }}</h2>
 
         @foreach ($search as $item)
         
         <div class="row mB-32">
-            <div class="col-md-3">
-                <img src="/img/news/{{$item->img}}" class="w-100" style="border-radius: 16px" alt="">
+            <div class="col-md-2">
+                <a href="/news/{{$item->id}}" class="text-decoration-none" style="font-size: 18pt; font-weight: bold; color: #C4170C"><img src="/img/news/{{$item->img}}" class="w-100" style="border-radius: 16px" alt=""></a>
+                
             </div>
-            <div class="d-flex align-items-center col-md-9 pL-16">
+            <div class="d-flex flex-column justify-content-center col-md-10 pL-16">
                 <a href="/news/{{$item->id}}" class="text-decoration-none" style="font-size: 18pt; font-weight: bold; color: #C4170C">{{ $item->title }}</a>
+                <a href="/news/{{$item->id}}" class="text-decoration-none w-100">{{ $item->title }}</a>
             </div>
         </div>
         
