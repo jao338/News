@@ -29,6 +29,14 @@ class NewController extends Controller{
 
         $user = auth()->user();
 
+        $request->validate([
+           'title' => 'required|string|max:255',
+        //    'topics' => 'required|json',
+        //    'themes' => 'required|json',
+           'date' => 'required|date',
+           'img' => 'required|image|mimes:jpeg,png,jpg,gif',
+        ]);
+
         $notice->title = $request->title;
         $notice->topic = json_encode($request->topics);
         $notice->themes = json_encode($request->themes);
