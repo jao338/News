@@ -27,10 +27,13 @@ class NewController extends Controller{
 
         $notice = new Notice();
 
+        $user = auth()->user();
+
         $notice->title = $request->title;
         $notice->topic = json_encode($request->topics);
         $notice->themes = json_encode($request->themes);
         $notice->date = $request->date;
+        $notice->user_id = $user->id;
 
         //  Verifica se existe um input do tipo file e se ele é válido
         if($request->hasFile('img') && $request->file('img')->isValid()){
@@ -123,5 +126,15 @@ class NewController extends Controller{
         // $search = Notice::where('title', 'LIKE', "%{$request->inputSearch}%")->paginate();
         
         return view('welcome', ['search' => $search]);
+    }
+
+    public function dashboard(){
+
+        $user = auth()->user();
+
+        $notices = $user->notices;
+
+        return view('dashboard', ['notices' => $notices]);
+
     }
 }

@@ -17,4 +17,11 @@ class Notice extends Model
 
     protected $casts = ['topics' => 'json'];
 
+    public function user(){
+
+        //  Um único usuário é dono de uma notícia
+        return $this->belongsTo('App\Models\User');
+
+    }
+
 }

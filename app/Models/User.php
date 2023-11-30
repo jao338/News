@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function notices(){
+
+        //  Um único usuário pode possuir várias noticias
+        return $this->hasMany(Notice::class);
+
+    }
 }

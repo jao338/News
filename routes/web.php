@@ -18,14 +18,12 @@ Route::get('/', [NewController::class, 'index']);
 
 Route::get('news/create', [NewController::class, 'create'])->middleware('auth');
 Route::get('/news/search/', [NewController::class, 'search']);
-Route::post('/news', [NewController::class, 'store']);
-Route::put('/news/{id}', [NewController::class, 'update']);
-Route::delete('/news/{id}', [NewController::class, 'destroy']);
+Route::post('/news', [NewController::class, 'store'])->middleware('auth');
+Route::put('/news/{id}', [NewController::class, 'update'])->middleware('auth');
+Route::delete('/news/{id}', [NewController::class, 'destroy'])->middleware('auth');
 Route::get('/news/{id}', [NewController::class, 'show']);
-Route::get('/news/edit/{id}', [NewController::class, 'edit']);
+Route::get('/news/edit/{id}', [NewController::class, 'edit'])->middleware('auth');
+Route::get('/dashboard', [NewController::class, 'dashboard'])->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

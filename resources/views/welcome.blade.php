@@ -83,6 +83,7 @@
                 </div>
 
                 
+                <h2>Política</h2>
                 <div class="row cards mB-32">
                     
                     @foreach ($allNotices as $notice)
@@ -91,7 +92,6 @@
 
                     @else
 
-                    <h2>Política</h2>
 
                         <div class="col-md-3">
                             <div class="card mR-32">
@@ -99,7 +99,7 @@
                                     <img src="/img/news/{{ $notice->img }}" alt="">
                                 </div>
                                 <div class="card-body">
-                                    <a href="/news/{{ $notice->id }}" class="text-decoration-none">{{ $notice->title }}</a>
+                                    <a href="/news/{{ $notice->id }}" class="text-decoration-none" style="color: #C4170C">{{ $notice->title }}</a>
                                 </div>
                             </div>
                         </div>
@@ -111,6 +111,8 @@
                 </div>
 
                 
+                <h2>Saúde</h2>
+                
                 <div class="row cards">
                     
                     @foreach ($allNotices as $notice)
@@ -119,7 +121,6 @@
                     
                     @else
 
-                    <h2>Saúde</h2>
 
                         <div class="col-md-3">
                             <div class="card mR-32">
@@ -127,7 +128,7 @@
                                     <img src="/img/news/{{ $notice->img }}" alt="">
                                 </div>
                                 <div class="card-body">
-                                    <a href="/news/{{ $notice->id }}" class="text-decoration-none">{{ $notice->title }}</a>
+                                    <a href="/news/{{ $notice->id }}" class="text-decoration-none" style="color: #C4170C">{{ $notice->title }}</a>
                                 </div>
                             </div>
                         </div>
