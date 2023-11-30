@@ -6,7 +6,6 @@
 
     @php
         $topics = json_decode($notice->topic, TRUE);
-        $user = auth()->user();
     @endphp
 
     <div class="d-flex flex-column align-items-center w-100">

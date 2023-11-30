@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notice;
+use App\Models\User;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\New_;
 
 class NewController extends Controller{
     
@@ -61,7 +61,9 @@ class NewController extends Controller{
 
         $notice = Notice::findOrFail($id);
 
-        return view('news/show', ['notice' => $notice]);
+        $user = User::where('id', $notice->user->id)->first();
+
+        return view('news/show', ['notice' => $notice, 'user' => $user]);
 
     }
 

@@ -7,7 +7,7 @@
     @if (isset($notices) && count($notices) == 0)
 
         <p>Nenhuma notícia foi encontrada, <a href="/news/create" class="text-decoration-none">criar notícia</a></p>
-        
+    
     @else
 
         <h2>Minhas noticias</h2>

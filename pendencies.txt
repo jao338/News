@@ -1,11 +1,6 @@
-1 - Um array deve ser passado contendo os inputs de 'topics', os dados devem ser salvos como string na coluna de 'description' usando um separador previamente definido
+X - Testar e ajustar o responsivo
+X - Deletar as imagens da pasta 'public' quando uma noticia for deletada
+X - Melhorar a lógica de exibição dos cards no index
+X - 
 
-2 - Adicionar tamanho fixo aos títulos das noticias, bem como quebra de linha
 
-3 - Adicionar chave estrangeira 'user_id' à tabela de noticias
-
-4 - Testar e ajustar o responsivo
-
-5 - Criar a página de exibição de uma notícia e passar como parâmetro para a rota o 'id' da noticia
-
-6 - Deletar as imagens da pasta 'public' quando uma noticia for deletada
